@@ -19,9 +19,18 @@
     <script type="text/javascript" src="/js/app.js"></script><!-- change to match your file/naming structure -->
 </head>
 <body>
-  <p>Title <c:out value="${title}"></c:out></p>
+  <table class="table">
+    <c:forEach var="book" items="${books}">
+      <tr>
+        <td>${book.title}</td>
+        <td>${book.author}</td>
+        <td>${book.pages}</td>
+      </tr>
+    </c:forEach>
+  </table>
+  <!-- <p>Title <c:out value="${title}"></c:out></p>
   <p>Author <c:out value="${author}"></c:out></p>
-  <p>Pages <c:out value="${pages}"></c:out></p>
+  <p>Pages <c:out value="${pages}"></c:out></p> -->
   <a class="btn btn-primary" href="/books/new"> Add a book</a>
 </body>
 </html>
